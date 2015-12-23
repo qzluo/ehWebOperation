@@ -5,7 +5,7 @@
 #include "ehClient.h"
 #include "cgi_common.h"
 
-#define DEFAULT_IP  "192.168.1.130"
+#define DEFAULT_IP  "192.168.1.118"
 #define DEFAULT_PORT  2222
 
 #define ADDR "addr"
@@ -49,7 +49,7 @@ int cgi_writeDev(void)
     value = atoi(strValue);
 
     //read device value
-    if (writeDev(DEFAULT_IP, DEFAULT_PORT, devno, value))
+    if (writeDev(NULL, DEFAULT_PORT, devno, value))
         return -1;
 
     return 0;
